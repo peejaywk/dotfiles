@@ -114,4 +114,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Set the default editor
 export EDITOR="/usr/bin/nano"
+
+# FUNCTIONS ---------------------------------------------------------------------
+
+note() {
+    echo "date: $(date)" >> $HOME/drafts.txt
+    echo "$@" >> $HOME/drafts.txt
+    echo "" >> $HOME/drafts.txt
+}
