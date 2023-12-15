@@ -10,6 +10,12 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable Flakes using experimental features
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
