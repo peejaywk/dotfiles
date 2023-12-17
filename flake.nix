@@ -34,7 +34,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       # By default, NixOS will try to refer the nixosConfiguration with
       # its hostname, so the system named `nixos-test` will use this one.
@@ -94,6 +94,13 @@
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
           ./system/configuration.nix
+
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+          }
         ];
       };
     };

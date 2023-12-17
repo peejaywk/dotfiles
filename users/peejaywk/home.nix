@@ -38,6 +38,8 @@
     git-crypt
     gnupg
     pinentry-qt
+
+    cowsay
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
