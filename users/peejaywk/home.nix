@@ -71,6 +71,17 @@
     ];
   };
 
+  programs.eza.enable = true;
+
+  programs.bash.enable = true;
+  programs.bash.shellAliases = {
+    ls = "eza";
+    ll = "eza -l";
+    la = "eza -a";
+    lt = "eza --tree";
+    lla = "eza -la";
+  };
+
   services.gpg-agent = {
     enable = true;
     pinentryFlavor = "qt";
