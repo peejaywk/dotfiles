@@ -108,8 +108,16 @@
     ];
   };
 
+  services.tailscale.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Add this to get Obsidian to run
+  # Might be able to remove once a new version of Obsidian and/or Electron is available
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   virtualisation = {
     docker = {

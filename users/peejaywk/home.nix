@@ -40,6 +40,7 @@
     pinentry-qt
 
     cowsay
+    obsidian
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -58,6 +59,16 @@
   };
   programs.gpg = {
     enable = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    historyLimit = 10000;
+    mouse = true;
+    plugins = with pkgs.tmuxPlugins; [
+      gruvbox
+    ];
   };
 
   services.gpg-agent = {
