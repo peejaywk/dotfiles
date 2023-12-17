@@ -100,7 +100,7 @@
   users.users.peejaywk = {
     isNormalUser = true;
     description = "Paul";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
       kate
@@ -111,11 +111,22 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation = {
+    docker = {
+      enable = true;
+      autoPrune = {
+        enable = true;
+        dates = "weekly";
+      };
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    docker-compose
   ];
 
   programs = {
