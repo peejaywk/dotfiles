@@ -24,6 +24,10 @@
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
   };
+  #boot.initrd = {
+  #  supportedFilesystems = [ "nfs" ];
+  #  kernelModules = [ "nfs" ];
+  #};
 
   # Enable swap on luks
   boot.initrd.luks.devices."luks-987a0089-ccdb-435a-aa50-37e3efc23695".device = "/dev/disk/by-uuid/987a0089-ccdb-435a-aa50-37e3efc23695";
@@ -95,6 +99,21 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  
+  fileSystems."/home/peejaywk/shared" = {
+    device = "192.168.1.76:volume1/Shared";
+    fsType = "nfs";
+    options = [ 
+      "x-systemd.before=local-fs.target" 
+      "x-systemd.automount"
+      "soft"
+    ];
+  };
+
+  services = {
+    rpcbind.enable = true;
+    nfs.server.enable = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.peejaywk = {
@@ -133,8 +152,29 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+    ansible
+    btop
+    coreutils
+    dnsutils
     docker-compose
+    ffmpeg
+    get_iplayer
+    gimp-with-plugins
+    just
+    kdenlive
+    libreoffice
+    nfs-utils
+    nwipe
+    opera
+    sysbench
+    unzip
+    veracrypt
+    virtualbox
+    vlc
+    wget
+    whois
+    yt-dlp
+    zip
   ];
 
   programs = {
