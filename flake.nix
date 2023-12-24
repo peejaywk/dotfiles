@@ -62,7 +62,7 @@
         "nixos" = lib.nixosSystem {
           inherit system;
           modules = [
-            (./. + "/profiles"+("/"+profile)+"/configuration.nix")
+            ./hosts/x220
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
