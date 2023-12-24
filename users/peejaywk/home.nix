@@ -15,7 +15,13 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  imports = [ ../common/bash.nix ];
+  imports = [ 
+    ../common/bash.nix
+    ../common/tmux.nix
+    ../common/eza.nix 
+    ../common/gpg.nix
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -37,8 +43,6 @@
     # '')
     git
     git-crypt
-    gnupg
-    pinentry-qt
 
     cowsay
     obsidian
@@ -58,35 +62,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  programs.gpg = {
-    enable = true;
-  };
 
-  programs.tmux = {
-    enable = true;
-    clock24 = true;
-    historyLimit = 10000;
-    mouse = true;
-    plugins = with pkgs.tmuxPlugins; [
-      gruvbox
-    ];
-  };
-
-  programs.eza.enable = true;
-
-#  programs.bash.enable = true;
-#  programs.bash.shellAliases = {
-#    ls = "eza";
- #   ll = "eza -l";
- #   la = "eza -a";
- #   lt = "eza --tree";
- #   lla = "eza -la";
- # };
-
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "qt";
-  };
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
   # Manager then you have to manually source 'hm-session-vars.sh' located at
