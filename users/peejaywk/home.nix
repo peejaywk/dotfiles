@@ -15,6 +15,7 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  imports = [ ../common/bash.nix ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -73,14 +74,14 @@
 
   programs.eza.enable = true;
 
-  programs.bash.enable = true;
-  programs.bash.shellAliases = {
-    ls = "eza";
-    ll = "eza -l";
-    la = "eza -a";
-    lt = "eza --tree";
-    lla = "eza -la";
-  };
+#  programs.bash.enable = true;
+#  programs.bash.shellAliases = {
+#    ls = "eza";
+ #   ll = "eza -l";
+ #   la = "eza -a";
+ #   lt = "eza --tree";
+ #   lla = "eza -la";
+ # };
 
   services.gpg-agent = {
     enable = true;
