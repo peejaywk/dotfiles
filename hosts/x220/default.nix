@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      ../common/tailscale.nix
     ];
 
   # Enable Flakes using experimental features
@@ -127,7 +129,7 @@
     ];
   };
 
-  services.tailscale.enable = true;
+  #services.tailscale.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
