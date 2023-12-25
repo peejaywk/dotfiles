@@ -129,8 +129,6 @@
     ];
   };
 
-  #services.tailscale.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -157,6 +155,7 @@
     ansible
     btop
     coreutils
+    distrobox
     dnsutils
     docker-compose
     ffmpeg
