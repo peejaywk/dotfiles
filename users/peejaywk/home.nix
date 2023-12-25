@@ -21,6 +21,7 @@
     ../common/eza.nix 
     ../common/gpg.nix
     ../common/syncthing.nix
+    ../common/atuin.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
