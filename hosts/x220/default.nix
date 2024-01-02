@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
 
       ../common/tailscale.nix
+      ../common/mounts.nix
     ];
 
   # Enable Flakes using experimental features
@@ -102,21 +103,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   
-  fileSystems."/home/peejaywk/shared" = {
-    device = "192.168.1.76:volume1/Shared";
-    fsType = "nfs";
-    options = [ 
-      "x-systemd.before=local-fs.target" 
-      "x-systemd.automount"
-      "soft"
-    ];
-  };
-
-  services = {
-    rpcbind.enable = true;
-    nfs.server.enable = true;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.peejaywk = {
     isNormalUser = true;
