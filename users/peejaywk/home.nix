@@ -45,9 +45,7 @@
     # '')
     git
     git-crypt
-
     cowsay
-    obsidian
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

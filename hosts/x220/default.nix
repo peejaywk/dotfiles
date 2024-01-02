@@ -166,6 +166,7 @@
     libreoffice
     nfs-utils
     nwipe
+    obsidian
     opera
     sysbench
     unzip
