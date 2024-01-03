@@ -22,6 +22,7 @@
     ../common/gpg.nix
     ../common/syncthing.nix
     ../common/atuin.nix
+    ../common/git.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -43,7 +44,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    git
+    #git
     git-crypt
     cowsay
   ];
