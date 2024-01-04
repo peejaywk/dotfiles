@@ -21,7 +21,7 @@
     ../common/eza.nix 
     ../common/gpg.nix
     ../common/syncthing.nix
-    ../common/atuin.nix
+    #../common/atuin.nix
     ../common/git.nix
   ];
 

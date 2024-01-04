@@ -75,6 +75,22 @@
             inherit hostname;
           };
         };
+        "homer" = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/homer
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+            }
+          ];
+          specialArgs = {
+            inherit username;
+            inherit name;
+            inherit hostname;
+          };
+        };
       };
       homeConfigurations = {
         user = home-manager.lib.homeManagerConfiguration {
