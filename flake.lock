@@ -36,10 +36,32 @@
         "type": "indirect"
       }
     },
+    "pia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1687263775,
+        "narHash": "sha256-sSVNT3o+4RcdnUqdVloPc3UvM3LancTY6htyzAHrC0w=",
+        "ref": "development",
+        "rev": "190f8040cc4837fb6b3c43032711e1536ef2270b",
+        "revCount": 10,
+        "type": "git",
+        "url": "https://git.sr.ht/~rprospero/nixos-pia"
+      },
+      "original": {
+        "ref": "development",
+        "type": "git",
+        "url": "https://git.sr.ht/~rprospero/nixos-pia"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "pia": "pia"
       }
     }
   },

@@ -13,6 +13,11 @@
 
     # Official NixOS package source, using nixos unstable here
     nixpkgs.url = "nixpkgs/nixos-unstable";
+
+    # Private Internet Access VPN
+    pia.url = "git+https://git.sr.ht/~rprospero/nixos-pia?ref=development";
+    pia.inputs.nixpkgs.follows = "nixpkgs";
+
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -34,7 +39,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, pia, ... }@inputs: 
 
     let
       # System Settings
@@ -68,6 +73,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
             }
+            pia.nixosModule
           ];
           specialArgs = {
             inherit username;
