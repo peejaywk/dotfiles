@@ -64,6 +64,10 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  services.pia.enable = true;
+  services.pia.authUserPass.username = "";
+  services.pia.authUserPass.password = "";
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
