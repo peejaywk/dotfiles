@@ -111,7 +111,7 @@
   users.users.peejaywk = {
     isNormalUser = true;
     description = "Paul";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     packages = with pkgs; [
       firefox
       kate
@@ -137,6 +137,8 @@
       };
     };
   };
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -161,7 +163,7 @@
     sysbench
     unzip
     veracrypt
-    virtualbox
+    #virtualbox
     vlc
     wget
     whois
