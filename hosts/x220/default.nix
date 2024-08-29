@@ -11,6 +11,7 @@
 
       ../common/tailscale.nix
       ../common/mounts.nix
+      ../common/dropbox.nix
     ];
 
   # Enable Flakes using experimental features
