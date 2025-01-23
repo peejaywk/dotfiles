@@ -102,7 +102,7 @@
     whois
     yt-dlp
     zip
-    vimdiff
+    vim
   ];
 
   programs = {
