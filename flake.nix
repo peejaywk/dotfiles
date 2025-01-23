@@ -12,7 +12,7 @@
     # which represents the GitHub repository URL + branch/commit-id/tag.
 
     # Official NixOS package source, using nixos unstable here
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
 
     # Private Internet Access VPN
     pia.url = "git+https://git.sr.ht/~rprospero/nixos-pia?ref=development";
