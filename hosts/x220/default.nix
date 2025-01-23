@@ -11,6 +11,7 @@
 
       ../common/tailscale.nix
       ../common/mounts.nix
+      ../common/dropbox.nix
     ];
 
   # Enable Flakes using experimental features
@@ -88,7 +89,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  #sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -111,7 +112,7 @@
   users.users.peejaywk = {
     isNormalUser = true;
     description = "Paul";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     packages = with pkgs; [
       firefox
       kate
@@ -137,6 +138,8 @@
       };
     };
   };
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -161,7 +164,7 @@
     sysbench
     unzip
     veracrypt
-    virtualbox
+    #virtualbox
     vlc
     wget
     whois
