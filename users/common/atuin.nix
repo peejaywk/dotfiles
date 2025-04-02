@@ -3,7 +3,7 @@
   programs.atuin = {
     enable = true;
     settings = {
-      sync_address = "http://peejay-cloud1:8888";
+      sync_address = "http://ubuntu-8gb-hel1-1:8888";
       sync_frequency = "15m";
       dialect = "uk";
       search_mode = "fuzzy";
