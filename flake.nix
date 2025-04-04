@@ -95,6 +95,17 @@
             inherit hostname;
           };
         };
+        "nixos-desktop" = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./homes/nixos-desktop
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUsrtPackages = true;
+              home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+            }
+          ];
+        };
       };
       homeConfigurations = {
         user = home-manager.lib.homeManagerConfiguration {
