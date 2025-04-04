@@ -11,22 +11,20 @@
     # The most widely used is `github:owner/name/reference`,
     # which represents the GitHub repository URL + branch/commit-id/tag.
 
-    # Official NixOS package source, using nixos unstable here
-    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
-
+    # Official NixOS package source
+    #nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    # Unstable packages
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Private Internet Access VPN
     pia.url = "git+https://git.sr.ht/~rprospero/nixos-pia?ref=development";
     pia.inputs.nixpkgs.follows = "nixpkgs";
+    # Secret management packages
+    sops-nix.url = "github:Mic92/sops-nix";
 
     # home-manager, used for managing user configuration
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      # The `follows` keyword in inputs is used for inheritance.
-      # Here, `inputs.nixpkgs` of home-manager is kept consistent with
-      # the `inputs.nixpkgs` of the current flake,
-      # to avoid problems caused by different versions of nixpkgs.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # `outputs` are all the build result of the flake.
@@ -39,7 +37,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, pia, ... }@inputs: 
+  outputs = { self, nixpkgs, unstable, home-manager, pia, sops-nix, ... }@inputs: 
 
     let
       # System Settings
