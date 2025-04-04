@@ -98,7 +98,7 @@
         "nixos-desktop" = lib.nixosSystem {
           inherit system;
           modules = [
-            ./homes/nixos-desktop
+            ./hosts/nixos-desktop
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUsrtPackages = true;
