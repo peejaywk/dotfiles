@@ -105,6 +105,11 @@
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
             }
           ];
+          specialArgs = {
+            inherit username;
+            inherit name;
+            inherit hostname;
+          };
         };
       };
       homeConfigurations = {
