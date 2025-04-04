@@ -127,7 +127,7 @@
     dnsutils
     docker-compose
     ffmpeg
-    get-iplayer
+    get_iplayer
     gimp-with-plugins
     just
     kdenlive
