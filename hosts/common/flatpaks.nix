@@ -8,6 +8,7 @@
         "org.telegram.desktop"
         "com.dropbox.Client"
         "md.obsidian.Obsidian"
+        "org.prismlauncher.PrismLauncher"
       ];
       update.auto = {
         enable = true;
