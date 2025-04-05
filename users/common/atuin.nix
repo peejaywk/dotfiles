@@ -8,6 +8,8 @@
       dialect = "uk";
       search_mode = "fuzzy";
       filter_mode = "host";
+      style = "compact";
+      enter_accept = true;
     };
   };
 }
