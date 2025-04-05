@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/tailscale.nix
-      ../common/dropbox.nix
+      ../common/flatpaks.nix
     ];
 
   # Enable Flakes using experimental features
@@ -135,7 +135,6 @@
     libreoffice
     nfs-utils
     nwipe
-    obsidian
     opera
     sysbench
     unzip

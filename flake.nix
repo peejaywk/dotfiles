@@ -25,6 +25,9 @@
     # home-manager, used for managing user configuration
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Manage flatpaks using Nix
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # Unstable branch
   };
 
   # `outputs` are all the build result of the flake.
@@ -37,7 +40,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, unstable, home-manager, pia, sops-nix, ... }@inputs: 
+  outputs = { self, nixpkgs, unstable, home-manager, pia, sops-nix, nix-flatpak, ... }@inputs: 
 
     let
       # System Settings
@@ -104,6 +107,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
             }
+            nix-flatpak.nixosModules.nix-flatpak
           ];
           specialArgs = {
             inherit username;
