@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/tailscale.nix
+      ../common/ssh.nix
+      ../common/dropbox.nix
     ];
 
   # Enable Flakes using experimental features
