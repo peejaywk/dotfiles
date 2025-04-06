@@ -34,6 +34,8 @@
         plugin = gruvbox-nvim;
         config = "colorscheme gruvbox";
       }
+
+      vimwiki
     ];
   };
 
