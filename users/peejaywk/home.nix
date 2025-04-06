@@ -23,6 +23,7 @@
     ../common/syncthing.nix
     ../common/atuin.nix
     ../common/git.nix
+    ../common/neovim.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -48,6 +49,7 @@
     git-crypt
     cowsay
     borgbackup
+    vim
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
