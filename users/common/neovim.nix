@@ -16,6 +16,8 @@
 
       xclip
       wl-clipboard
+
+      vimwiki-markdown
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -37,8 +39,9 @@
 
       vimwiki
     ];
+    extraLuaConfig = ''
+      ${builtins.readFile ./neovim/options.lua}
+      ${builtins.readFile ./neovim/vimwiki.lua}
+    '';
   };
-
-
-
 }
