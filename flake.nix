@@ -28,6 +28,10 @@
 
     # Manage flatpaks using Nix
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # Unstable branch
+
+		# Firefox Addons
+		firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+		firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # `outputs` are all the build result of the flake.
@@ -40,7 +44,8 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, unstable, home-manager, pia, sops-nix, nix-flatpak, ... }@inputs: 
+  outputs = { self, nixpkgs, unstable, home-manager, pia, nix-flatpak, ... }@inputs: 
+    # unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     let
       # System Settings
