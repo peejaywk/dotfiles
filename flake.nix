@@ -45,8 +45,6 @@
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
   outputs = { self, nixpkgs, unstable, home-manager, pia, nix-flatpak, ... }@inputs: 
-    # unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
     let
       # System Settings
       system = "x86_64-linux";
@@ -86,6 +84,7 @@
             inherit name;
             inherit hostname;
           };
+					#extraSpecialArgs = { inherit inputs; };
         };
         "homer" = lib.nixosSystem {
           inherit system;
@@ -111,6 +110,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+							home-manager.extraSpecialArgs = { inherit inputs; };
+							home-manager.backupFileExtension = "backup";
             }
             nix-flatpak.nixosModules.nix-flatpak
           ];
@@ -118,7 +119,9 @@
             inherit username;
             inherit name;
             inherit hostname;
+						inherit inputs;
           };
+					#extraSpecialArgs = { inherit inputs; };
         };
       };
       homeConfigurations = {
@@ -136,5 +139,4 @@
         };
       };
     };
-  
 }
