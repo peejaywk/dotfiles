@@ -76,15 +76,17 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+							home-manager.extraSpecialArgs = { inherit inputs; };
+							home-manager.backupFileExtension = "backup";
             }
             pia.nixosModule
+						nix-flatpak.nixosModules.nix-flatpak
           ];
           specialArgs = {
             inherit username;
             inherit name;
             inherit hostname;
           };
-					#extraSpecialArgs = { inherit inputs; };
         };
         "homer" = lib.nixosSystem {
           inherit system;
@@ -94,6 +96,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+							home-manger.extraSpecialArgs = { inherit inputs; };
+							home-manager.backupFileExtension = "backup";
             }
           ];
           specialArgs = {
@@ -121,7 +125,6 @@
             inherit hostname;
 						inherit inputs;
           };
-					#extraSpecialArgs = { inherit inputs; };
         };
       };
       homeConfigurations = {
