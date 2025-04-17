@@ -48,7 +48,7 @@
     let
       # System Settings
       system = "x86_64-linux";
-      hostname = "nixos";
+      hostname = "nixos-desktop";
       profile = "laptop";
 
       # User Settings
@@ -111,10 +111,13 @@
           modules = [
             ./hosts/nixos-desktop
             home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
+						  home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
-							home-manager.extraSpecialArgs = { inherit inputs; };
+							home-manager.extraSpecialArgs = { 
+								inherit inputs;  
+								inherit hostname;
+							};
 							home-manager.backupFileExtension = "backup";
             }
             nix-flatpak.nixosModules.nix-flatpak

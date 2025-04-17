@@ -10,9 +10,9 @@ in
       package = pkgs.syncthingtray;
     };
     extraOptions = [
-      "--config=${config.home.homeDirectory}/Syncthing/Devices/nixos"
-      "--data=${config.home.homeDirectory}/Syncthing/DB/nixos"
-      # "--no-default-folder"
+      "--config=${config.home.homeDirectory}/Syncthing/Devices/${hostname}"
+      "--data=${config.home.homeDirectory}/Syncthing/DB/${hostname}"
+      "--no-default-folder"
     ];
   };
 }
