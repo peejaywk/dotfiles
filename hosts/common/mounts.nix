@@ -14,10 +14,15 @@
     environment.systemPackages = [ pkgs.cifs-utils ];
 
     fileSystems."/home/peejaywk/Shared/arr" = {
-      device = "//192.168.30.10/Shared/arr";
+      device = "//192.168.30.174/Shared/arr";
       fsType = "cifs";
       options = mount-options;
     };
+		fileSystems."/home/peejaywk/Shared/arr_old" = {
+			device = "//192.168.30.10/arr";
+			fsType = "cifs";
+			options = mount-options;
+		};
     fileSystems."/home/peejaywk/Shared/Data" = {
       device = "//192.168.30.10/data";
       fsType = "cifs";
@@ -39,10 +44,15 @@
       options = mount-options;
     };
     fileSystems."/home/peejaywk/Shared/Docker" = {
-      device = "//192.168.30.10/Docker";
+      device = "//192.168.30.174/Docker";
       fsType = "cifs";
       options = mount-options;
     };
+		fileSystems."/home/peejaywk/Shared/Docker_oldw" = {
+			device = "//192.168.30.10/Docker";
+			fsType = "cifs";
+			options = mount-options;
+		};
   services = {
     rpcbind.enable = true;
     nfs.server.enable = true;

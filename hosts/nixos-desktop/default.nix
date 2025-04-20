@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../common/tailscale.nix
       ../common/flatpaks.nix
+			../common/mounts.nix
     ];
 
   # Enable Flakes using experimental features
