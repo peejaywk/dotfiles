@@ -14,12 +14,12 @@
     environment.systemPackages = [ pkgs.cifs-utils ];
 
     fileSystems."/home/peejaywk/Shared/arr" = {
-      device = "//192.168.30.174/Shared/arr";
+      device = "//192.168.30.174/arr";
       fsType = "cifs";
       options = mount-options;
     };
 		fileSystems."/home/peejaywk/Shared/arr_old" = {
-			device = "//192.168.30.10/arr";
+			device = "//192.168.30.10/Shared/arr";
 			fsType = "cifs";
 			options = mount-options;
 		};
