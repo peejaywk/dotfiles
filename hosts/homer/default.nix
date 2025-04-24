@@ -103,6 +103,7 @@
     yt-dlp
     zip
     vim
+		sqlite-utils
   ];
 
   programs = {

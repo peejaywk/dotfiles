@@ -48,7 +48,7 @@
     let
       # System Settings
       system = "x86_64-linux";
-      hostname = "nixos-desktop";
+      hostname = "homer";
       profile = "laptop";
 
       # User Settings
@@ -73,14 +73,17 @@
           modules = [
             ./hosts/x220
             home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
-							home-manager.extraSpecialArgs = { inherit inputs; };
-							home-manager.backupFileExtension = "backup";
+            	home-manager.useGlobalPkgs = true;
+            	home-manager.useUserPackages = true;
+            	home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+	      			home-manager.extraSpecialArgs = { 
+								inherit inputs;
+								inherit hostname;
+							};
+	      			home-manager.backupFileExtension = "backup";
             }
             pia.nixosModule
-						nix-flatpak.nixosModules.nix-flatpak
+	    			nix-flatpak.nixosModules.nix-flatpak
           ];
           specialArgs = {
             inherit username;
@@ -93,11 +96,14 @@
           modules = [
             ./hosts/homer
             home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
-							home-manger.extraSpecialArgs = { inherit inputs; };
-							home-manager.backupFileExtension = "backup";
+            	home-manager.useGlobalPkgs = true;
+            	home-manager.useUserPackages = true;
+            	home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
+	      			home-manager.extraSpecialArgs = { 
+            		inherit inputs;
+              	inherit hostname; 
+            	};
+	      			home-manager.backupFileExtension = "backup";
             }
           ];
           specialArgs = {
@@ -111,14 +117,14 @@
           modules = [
             ./hosts/nixos-desktop
             home-manager.nixosModules.home-manager {
-						  home-manager.useGlobalPkgs = true;
+	      			home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.peejaywk = import ./users/peejaywk/home.nix;
-							home-manager.extraSpecialArgs = { 
-								inherit inputs;  
-								inherit hostname;
-							};
-							home-manager.backupFileExtension = "backup";
+	      			home-manager.extraSpecialArgs = { 
+	        			inherit inputs;  
+	        			inherit hostname;
+	      			};
+	      			home-manager.backupFileExtension = "backup";
             }
             nix-flatpak.nixosModules.nix-flatpak
           ];
@@ -126,7 +132,7 @@
             inherit username;
             inherit name;
             inherit hostname;
-						inherit inputs;
+	    			inherit inputs;
           };
         };
       };
