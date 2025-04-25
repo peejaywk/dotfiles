@@ -18,37 +18,17 @@
       fsType = "cifs";
       options = mount-options;
     };
-		fileSystems."/home/peejaywk/Shared/arr_old" = {
-			device = "//192.168.30.10/Shared/arr";
+		fileSystems."home/peejaywk/Shared/data" = {
+			device = "//192.168.30.174/Data";
 			fsType = "cifs";
 			options = mount-options;
 		};
-    fileSystems."/home/peejaywk/Shared/Data" = {
-      device = "//192.168.30.10/data";
-      fsType = "cifs";
-      options = mount-options;
-    };
-    fileSystems."/home/peejaywk/Shared/Homes" = {
-      device = "//192.168.30.10/homes";
-      fsType = "cifs";
-      options = mount-options;
-    };
-    fileSystems."/home/peejaywk/Shared/MyMusic" = {
-      device = "//192.168.30.10/MyMusic";
-      fsType = "cifs";
-      options = mount-options;
-    };
-    fileSystems."/home/peejaywk/Shared/Videos" = {
-      device = "//192.168.30.10/video";
-      fsType = "cifs";
-      options = mount-options;
-    };
     fileSystems."/home/peejaywk/Shared/Docker" = {
       device = "//192.168.30.174/Docker";
       fsType = "cifs";
       options = mount-options;
     };
-		fileSystems."/home/peejaywk/Shared/Docker_oldw" = {
+		fileSystems."/home/peejaywk/Shared/Docker_old" = {
 			device = "//192.168.30.10/Docker";
 			fsType = "cifs";
 			options = mount-options;
