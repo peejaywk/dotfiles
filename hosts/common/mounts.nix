@@ -28,11 +28,6 @@
       fsType = "cifs";
       options = mount-options;
     };
-		fileSystems."/home/peejaywk/Shared/Docker_old" = {
-			device = "//192.168.30.10/Docker";
-			fsType = "cifs";
-			options = mount-options;
-		};
   services = {
     rpcbind.enable = true;
     nfs.server.enable = true;
