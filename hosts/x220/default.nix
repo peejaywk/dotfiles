@@ -8,10 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
       ../common/tailscale.nix
+			../common/flatpaks.nix
       ../common/mounts.nix
-      ../common/dropbox.nix
     ];
 
   # Enable Flakes using experimental features
@@ -114,7 +113,6 @@
     description = "Paul";
     extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     packages = with pkgs; [
-      firefox
       kate
     #  thunderbird
     ];
@@ -159,12 +157,10 @@
     libreoffice
     nfs-utils
     nwipe
-    obsidian
     opera
     sysbench
     unzip
     veracrypt
-    #virtualbox
     vlc
     wget
     whois
