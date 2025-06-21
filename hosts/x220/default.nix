@@ -89,7 +89,7 @@
 
   # Enable sound with pipewire.
   #sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -153,11 +153,10 @@
     get_iplayer
     gimp-with-plugins
     just
-    kdenlive
+    kdePackages.kdenlive
     libreoffice
     nfs-utils
     nwipe
-    opera
     sysbench
     unzip
     veracrypt

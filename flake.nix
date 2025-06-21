@@ -13,7 +13,7 @@
 
     # Official NixOS package source
     #nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     # Unstable packages
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Private Internet Access VPN
@@ -23,7 +23,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     # home-manager, used for managing user configuration
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Manage flatpaks using Nix
