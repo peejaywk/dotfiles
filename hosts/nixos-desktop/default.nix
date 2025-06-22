@@ -19,6 +19,9 @@
     experimental-features = nix-command flakes
   '';
 
+  # Issue with kernel 6.12 and Virtual. Adding this line should fix it.
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
