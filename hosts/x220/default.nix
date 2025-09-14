@@ -113,7 +113,9 @@
     description = "Paul";
     extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
     packages = with pkgs; [
-      kate
+      kdePackages.kate
+      dos2unix
+      unix2dos
     #  thunderbird
     ];
   };
