@@ -115,7 +115,6 @@
     packages = with pkgs; [
       kdePackages.kate
       dos2unix
-      unix2dos
     #  thunderbird
     ];
   };
