@@ -9,6 +9,7 @@
         "com.dropbox.Client"
         "md.obsidian.Obsidian"
         "org.prismlauncher.PrismLauncher"
+				"com.valvesoftware.Steam"
       ];
       update.auto = {
         enable = true;

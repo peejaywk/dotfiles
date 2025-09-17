@@ -139,6 +139,8 @@
     libreoffice
     nfs-utils
     nwipe
+    quickemu
+		quickget
     sysbench
     unzip
     vlc
