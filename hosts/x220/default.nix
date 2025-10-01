@@ -19,6 +19,9 @@
     experimental-features = nix-command flakes
   '';
 
+  # Added to fix issue with VMs in the latest kernel
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ]; 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -158,6 +161,7 @@
     libreoffice
     nfs-utils
     nwipe
+		quickemu
     sysbench
     unzip
     veracrypt
