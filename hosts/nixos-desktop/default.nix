@@ -142,6 +142,7 @@
     quickemu
     sysbench
     unzip
+		vscode-with-extensions
     vlc
     veracrypt
     wget

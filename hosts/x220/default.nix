@@ -166,6 +166,7 @@
     unzip
     veracrypt
     vlc
+		vscode-with-extensions
     wget
     whois
     yt-dlp
