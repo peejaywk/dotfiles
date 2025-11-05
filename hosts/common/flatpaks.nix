@@ -10,6 +10,7 @@
         "md.obsidian.Obsidian"
         "org.prismlauncher.PrismLauncher"
 				"com.valvesoftware.Steam"
+				"org.kde.isoimagewriter"
       ];
       update.auto = {
         enable = true;
