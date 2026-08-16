@@ -13,7 +13,7 @@
 
     # Official NixOS package source
     #nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     # Unstable packages
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Private Internet Access VPN
