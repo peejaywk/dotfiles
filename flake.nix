@@ -23,7 +23,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     # home-manager, used for managing user configuration
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Manage flatpaks using Nix
