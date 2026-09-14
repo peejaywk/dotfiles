@@ -11,7 +11,6 @@
       ../common/tailscale.nix
       ../common/flatpaks.nix
       ../common/mounts.nix
-      ../common/syncthing.nix
     ];
 
   # Enable Flakes using experimental features
