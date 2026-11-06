@@ -11,6 +11,7 @@
       ../common/tailscale.nix
       ../common/flatpaks.nix
       ../common/mounts.nix
+      ../common/claude-code.nix
     ];
 
   # Enable Flakes using experimental features

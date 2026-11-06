@@ -12,6 +12,7 @@
       ../common/tailscale.nix
       ../common/mounts.nix
       ../common/ssh.nix
+      ../common/claude-code.nix
     ];
 
   # Enable Flakes using experimental features
